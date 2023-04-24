@@ -13,9 +13,18 @@ namespace Software_Design_Patterns.Singleton
 
         private Counter(){}
 
-        private static Counter Instance = new Counter();
+        // private static Counter Instance = new Counter();
 
-        public static Counter GetInstance() => Instance;
+        private static Counter Instance = null;
+
+        public static Counter GetInstance() 
+        {
+            if (Instance == null) 
+            {
+                Instance = new Counter();
+            }
+            return Instance;
+        }
 
         public void IncrementCounter()
         {
