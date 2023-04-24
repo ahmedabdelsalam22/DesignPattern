@@ -13,12 +13,11 @@ namespace SoftwateDesign
             Console.WriteLine(counter1.Count);
 
 
-            Counter counter2 = new Counter();
 
             counter2.IncrementCounter();
 
             Console.WriteLine(counter2.Count);
-
+      }
 
         }
     }
