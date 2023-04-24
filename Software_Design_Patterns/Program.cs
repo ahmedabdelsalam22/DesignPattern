@@ -6,19 +6,23 @@ namespace SoftwateDesign
     {
       public static void Main(string[] args) 
         {
-           Counter counter1 = new Counter();
+           //  Counter counter1 = new Counter();
+
+            Counter counter1 = Counter.GetInstance();
 
             counter1.IncrementCounter();
 
-            Console.WriteLine(counter1.Count);
+            Console.WriteLine(counter1.Count);  // print: 1
 
+
+            //  Counter counter2 = new Counter();
+
+            Counter counter2 = Counter.GetInstance();
 
 
             counter2.IncrementCounter();
 
-            Console.WriteLine(counter2.Count);
-      }
-
+            Console.WriteLine(counter2.Count); // print: 2
         }
     }
 }
