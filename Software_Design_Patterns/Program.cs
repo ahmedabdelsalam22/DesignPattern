@@ -7,19 +7,30 @@ namespace SoftwateDesign
       public static void Main(string[] args) 
         {
 
-            Counter counter1 = Counter.GetInstance();
+            //First thrid
+            Task task = Task.Factory.StartNew(() =>
+            {
+                Counter counter_1 = Counter.GetInstance();
 
-            counter1.IncrementCounter();
+                counter_1.IncrementCounter();
 
-            Console.WriteLine(counter1.Count);  // print: 1
+                Console.WriteLine("counter_1 equal " + counter_1.Count);  // print: 1
+                
+            });
 
 
 
-            Counter counter2 = Counter.GetInstance();
+            //second thrid
+           Task task1 = Task.Factory.StartNew(() =>
+           {
+                Counter counter_2 = Counter.GetInstance();
 
-            counter2.IncrementCounter();
+               counter_2.IncrementCounter();
 
-            Console.WriteLine(counter2.Count); // print: 2
+                Console.WriteLine("counter_2 equal " + counter_2.Count); // print: 2
+           });
+
+            Console.ReadKey();
         }
     }
 }

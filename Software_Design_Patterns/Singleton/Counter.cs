@@ -17,13 +17,19 @@ namespace Software_Design_Patterns.Singleton
 
         private static Counter Instance = null;
 
+        // thread 
+        private static Object lockObj = new Object();
+
         public static Counter GetInstance() 
         {
-            if (Instance == null) 
+            lock (lockObj) // lock this impl after excuting .. 
             {
-                Instance = new Counter();
+                if (Instance == null)
+                {
+                    Instance = new Counter();
+                }
+                return Instance;
             }
-            return Instance;
         }
 
         public void IncrementCounter()
