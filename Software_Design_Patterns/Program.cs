@@ -6,7 +6,6 @@ namespace SoftwateDesign
     {
       public static void Main(string[] args) 
         {
-           //  Counter counter1 = new Counter();
 
             Counter counter1 = Counter.GetInstance();
 
@@ -15,10 +14,8 @@ namespace SoftwateDesign
             Console.WriteLine(counter1.Count);  // print: 1
 
 
-            //  Counter counter2 = new Counter();
 
             Counter counter2 = Counter.GetInstance();
-
 
             counter2.IncrementCounter();
 
