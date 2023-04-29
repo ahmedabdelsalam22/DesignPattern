@@ -1,11 +1,11 @@
 ﻿using Software_Design_Patterns.Singleton;
 
-namespace SoftwateDesign 
+namespace SoftwateDesign
 {
-    class Program 
+    class Program
     {
-        
-        public static void Main(string[] args) 
+
+        public static void Main(string[] args)
         {
 
             ///// SINGLETON 
@@ -75,8 +75,9 @@ namespace SoftwateDesign
               
              */
 
-
+           
             Console.ReadKey();
         }
     }
+
 }
