@@ -1,4 +1,5 @@
-﻿using Software_Design_Patterns.Singleton;
+﻿using Software_Design_Patterns.BuilderPattern;
+using Software_Design_Patterns.Singleton;
 
 namespace SoftwateDesign
 {
@@ -75,7 +76,55 @@ namespace SoftwateDesign
               
              */
 
-           
+            //// BUILDER 
+
+            var builder = new SallaryCalculationBuilder();
+            while (true) 
+            {
+                Console.WriteLine("Select an option:");
+                Console.WriteLine("1. Add 20% Bonus");
+                Console.WriteLine("2. Deduct 10% Taxes");
+                Console.WriteLine("3. Add 2000 Education Package");
+                Console.WriteLine("4. Add 1000 Transportation");
+                Console.WriteLine("5. Send Payslip to employee");
+                Console.WriteLine("6. Post Voucher to GL");
+                Console.WriteLine("0. Build");
+
+                var option = int.Parse(Console.ReadLine());
+                if (option == 1) 
+                {
+                    builder.WithBonus(20);
+                }
+                if (option == 2)
+                {
+                    builder.WithTaxes(10);
+                }
+                if (option == 3)
+                {
+                    builder.WithEducationPackage(2000);
+                }
+                if (option == 4)
+                {
+                    builder.WithTransportation(4000);
+                }
+                if (option == 5)
+                {
+                    builder.SendPaysLipToEmployee(true);
+                }
+                if (option == 6)
+                {
+                    builder.PostResultToGL(true);
+                }
+                else if (option == 0) 
+                {
+                    var calculator = builder.Build();
+                    var employee = new Employee("Ahmed","Ahmed@gmail.com",70000);
+                    var sallary = calculator.Calculate(employee);
+                    builder = new SallaryCalculationBuilder();
+                }
+
+            }
+
             Console.ReadKey();
         }
     }
