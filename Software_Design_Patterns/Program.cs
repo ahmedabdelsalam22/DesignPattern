@@ -76,7 +76,6 @@ namespace SoftwateDesign
              */
 
 
-
             Console.ReadKey();
         }
     }
