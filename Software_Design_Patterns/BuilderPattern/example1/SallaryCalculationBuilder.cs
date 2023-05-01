@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Software_Design_Patterns.BuilderPattern
+namespace Software_Design_Patterns.BuilderPattern.example1
 {
     public class SallaryCalculationBuilder
     {
@@ -15,7 +15,7 @@ namespace Software_Design_Patterns.BuilderPattern
         private bool _sendPaysLipToEmployee = true;
         private bool _postResultToGL = true;
 
-        public SallaryCalculationBuilder WithTaxes(int taxPercentage) 
+        public SallaryCalculationBuilder WithTaxes(int taxPercentage)
         {
             LoggMessage($"{taxPercentage} taxes will be deducted.");
             _taxPercentage = taxPercentage;
@@ -51,7 +51,7 @@ namespace Software_Design_Patterns.BuilderPattern
             return this;
         }
 
-        private void LoggMessage(String message) 
+        private void LoggMessage(string message)
         {
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine(message);
@@ -60,10 +60,10 @@ namespace Software_Design_Patterns.BuilderPattern
 
         //build object 
 
-        public SallaryCalculator Build() 
+        public SallaryCalculator Build()
         {
-            return new SallaryCalculator(_taxPercentage,_bonusPercentage,_educationPackage,
-                _transportation,_sendPaysLipToEmployee,_postResultToGL);
+            return new SallaryCalculator(_taxPercentage, _bonusPercentage, _educationPackage,
+                _transportation, _sendPaysLipToEmployee, _postResultToGL);
         }
 
     }
