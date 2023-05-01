@@ -4,19 +4,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Software_Design_Patterns.BuilderPattern
+namespace Software_Design_Patterns.BuilderPattern.example1
 {
     public class Employee
     {
-        public Employee(String name , string email , decimal basicSallary)
+        public Employee(string name, string email, decimal basicSallary)
         {
             Name = name;
             Email = email;
             BasicSallary = basicSallary;
         }
-        public String Name { get;}
-        public String Email { get;}
-        public Decimal BasicSallary { get;}
+        public string Name { get; }
+        public string Email { get; }
+        public decimal BasicSallary { get; }
 
     }
 }

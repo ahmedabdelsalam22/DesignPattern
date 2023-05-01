@@ -1,4 +1,6 @@
 ﻿using Software_Design_Patterns.BuilderPattern;
+using Software_Design_Patterns.BuilderPattern.example1;
+using Software_Design_Patterns.BuilderPattern.example2;
 using Software_Design_Patterns.Singleton;
 
 namespace SoftwateDesign
@@ -77,7 +79,7 @@ namespace SoftwateDesign
              */
 
             //// BUILDER 
-
+            /*
             var builder = new SallaryCalculationBuilder();
             while (true) 
             {
@@ -124,7 +126,17 @@ namespace SoftwateDesign
                 }
 
             }
+            */
 
+            //// BUILDER - another ex
+            Director director = new Director();
+
+            Builder b1 = new ConcreteBuilder1();
+
+            director.Construct(b1);
+
+            Product p = b1.GetProduct();
+            p.Show();
             Console.ReadKey();
         }
     }
