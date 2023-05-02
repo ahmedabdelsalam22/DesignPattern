@@ -11,8 +11,6 @@ namespace SoftwateDesign
         public static void Main(string[] args)
         {
 
-            ///// SINGLETON 
-
             /*
             
             //First thrid
@@ -40,8 +38,6 @@ namespace SoftwateDesign
 
              */
 
-
-            //// PROTOTYPE 
 
             /*
              
@@ -83,9 +79,6 @@ namespace SoftwateDesign
             }
             */
 
-            Director director = new Director();
-
-            Builder b1 = new ConcreteBuilder1();
 
 
             Console.ReadKey();
