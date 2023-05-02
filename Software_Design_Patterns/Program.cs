@@ -1,6 +1,7 @@
 ﻿using Software_Design_Patterns.BuilderPattern;
-using Software_Design_Patterns.BuilderPattern.example1;
-using Software_Design_Patterns.BuilderPattern.example2;
+
+using Software_Design_Patterns.BuilderPattern.example3;
+using Software_Design_Patterns.Factory;
 using Software_Design_Patterns.Singleton;
 
 namespace SoftwateDesign
@@ -10,7 +11,7 @@ namespace SoftwateDesign
 
         public static void Main(string[] args)
         {
-
+            #region SINGLETON
             /*
             
             //First thrid
@@ -37,8 +38,9 @@ namespace SoftwateDesign
            });
 
              */
+            #endregion
 
-
+            #region PROTOTYPE
             /*
              
               EmployeePrototype tempEmp1 = new TempEmployee();
@@ -73,13 +75,41 @@ namespace SoftwateDesign
             Console.WriteLine(tempEmp2.ToString());
               
              */
+            #endregion
+
+            #region BUILDER
+            /*
+           Director director = new Director();
+
+           IBuilder carBuilder = new Car("BMW");
+
+           director.Consuruct(carBuilder);
+
+           Product carProduct = carBuilder.GetVehicle();
 
 
+           Console.WriteLine(carProduct.Show());
+           */
+            #endregion
 
-            }
-            */
+            #region Factory
 
+            Console.WriteLine("Enter CardNumber of your bank");
 
+            String cardNumber, bankCode;
+            
+
+            cardNumber = Console.ReadLine();
+
+            bankCode = cardNumber.Substring(0, 6);
+
+            IBankFactory bankFactory = new BankFactory();
+
+            IBank bank = bankFactory.GetBank(bankCode);
+
+            Console.WriteLine(bank.WithDrow());
+
+            #endregion
 
             Console.ReadKey();
         }
