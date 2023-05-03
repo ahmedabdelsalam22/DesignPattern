@@ -2,6 +2,7 @@
 
 using Software_Design_Patterns.BuilderPattern.example3;
 using Software_Design_Patterns.Factory;
+using Software_Design_Patterns.Factory.Abstract_Factory;
 using Software_Design_Patterns.Singleton;
 
 namespace SoftwateDesign
@@ -103,13 +104,21 @@ namespace SoftwateDesign
 
             bankCode = cardNumber.Substring(0, 6);
 
+
             IBankFactory bankFactory = new BankFactory();
 
             IBank bank = bankFactory.GetBank(bankCode);
 
+            //adding abstract factory to factory
+            
+            IPaymentCard paymentCard = bankFactory.GetPaymentCard(cardNumber.Substring(0,2));
+
+
             Console.WriteLine(bank.WithDrow());
+            Console.WriteLine(paymentCard.GetName());
 
             #endregion
+
 
             Console.ReadKey();
         }
