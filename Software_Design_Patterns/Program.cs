@@ -117,7 +117,6 @@ namespace SoftwateDesign
             Console.WriteLine(bank.WithDrow());
             Console.WriteLine(paymentCard.GetName());
 
-            #endregion
 
 
             Console.ReadKey();
