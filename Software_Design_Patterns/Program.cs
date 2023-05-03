@@ -3,6 +3,7 @@
 using Software_Design_Patterns.BuilderPattern.example3;
 using Software_Design_Patterns.Factory;
 using Software_Design_Patterns.Factory.Abstract_Factory;
+using Software_Design_Patterns.Proxy;
 using Software_Design_Patterns.Singleton;
 
 namespace SoftwateDesign
@@ -94,7 +95,7 @@ namespace SoftwateDesign
             #endregion
 
             #region Factory
-
+            /*
             Console.WriteLine("Enter CardNumber of your bank");
 
             String cardNumber, bankCode;
@@ -116,8 +117,24 @@ namespace SoftwateDesign
 
             Console.WriteLine(bank.WithDrow());
             Console.WriteLine(paymentCard.GetName());
-
+            */
             #endregion
+
+            #region Proxy
+
+            SMSServiceProxy proxy = new SMSServiceProxy();
+
+            string result1 = proxy.SendSMS("123", "01113046200", "message 1");
+            string result2 = proxy.SendSMS("123", "01113046200", "message 1");
+            string result3 = proxy.SendSMS("123", "01113046200", "message 1");
+            string result4 = proxy.SendSMS("123", "01113046200", "message 1");
+
+            Console.WriteLine(result1);
+            Console.WriteLine(result2);
+            Console.WriteLine(result3);
+            Console.WriteLine(result4);
+            #endregion
+
 
 
             Console.ReadKey();
