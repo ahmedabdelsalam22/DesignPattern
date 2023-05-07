@@ -135,8 +135,6 @@ namespace SoftwateDesign
             Console.WriteLine(result4);
             #endregion
 
-
-
             Console.ReadKey();
         }
     }
